@@ -43,6 +43,12 @@
                     <span>Data Diagnosis</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('konsultasi') }}">
+                    <i class="bi bi-grid"></i>
+                    <span>Data Konsultasi</span>
+                </a>
+            </li>
         @endif
 
         @if (Auth::user()->role == 'admin')
@@ -84,6 +90,12 @@
                 <a class="nav-link collapsed" href="{{ route('diagnosis.index') }}">
                     <i class="bi bi-search"></i>
                     <span>Diagnosis</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('konsultasi') }}">
+                    <i class="bi bi-grid"></i>
+                    <span>Konsultasi</span>
                 </a>
             </li>
             <li class="nav-item">

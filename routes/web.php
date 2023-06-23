@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DiagnosisController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MasterIdentiController;
 use App\Http\Controllers\MasterJenisController;
@@ -68,4 +69,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('diagnosis', [DiagnosisController::class, 'index'])->name('diagnosis.index');
     Route::get('outputDiagnosis', [DiagnosisController::class, 'output'])->name('diagnosis.output');
     Route::post('prosesDiagnosis', [DiagnosisController::class, 'prosesDiagnosis'])->name('diagnosis.prosesDiagnosis');
+
+    Route::get('konsultasi', [KonsultasiController::class, 'index'])->name('konsultasi');
+    Route::get('konsultasi/tambah', [KonsultasiController::class, 'create'])->name('konsultasi.create');
+    Route::post('konsultasi/tambah', [KonsultasiController::class, 'store'])->name('konsultasi.store');
+    Route::get('konsultasi/detail/{id}', [KonsultasiController::class, 'detail'])->name('konsultasi.detail');
+    Route::put('konsultasi/update/{id}', [KonsultasiController::class, 'update'])->name('konsultasi.update');
+    Route::delete('konsultasi/delete/{id}', [KonsultasiController::class, 'delete'])->name('konsultasi.delete');
 });
